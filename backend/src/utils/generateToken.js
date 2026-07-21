@@ -5,10 +5,11 @@ const generateToken = (res, userId) => {
     expiresIn: '30d',
   });
 
+  const isProduction = process.env.VERCEL || process.env.NODE_ENV === 'production';
   res.cookie('jwt', token, {
     httpOnly: true,
-    secure: process.env.VERCEL ? true : false,
-    sameSite: process.env.VERCEL ? 'none' : 'strict',
+    secure: isProduction ? true : false,
+    sameSite: isProduction ? 'none' : 'strict',
     maxAge: 30 * 24 * 60 * 60 * 1000,
   });
 };
