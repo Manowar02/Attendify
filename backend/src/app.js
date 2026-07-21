@@ -8,9 +8,9 @@ import attendanceRoutes from './routes/attendanceRoutes.js';
 
 const app = express();
 
-app.use(cors({ 
-  origin: ['http://localhost:5173', 'https://attendify-frontend-omega.vercel.app'], 
-  credentials: true 
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://attendify-six-beryl.vercel.app'],
+  credentials: true
 }));
 app.use(express.json());
 app.use(cookieParser());
